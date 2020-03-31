@@ -45,6 +45,7 @@
 #include <string.h>
 
 #include "Descriptors.h"
+#include "Config/AppConfig.h"
 
 #include <LUFA/Version.h>
 #if 0

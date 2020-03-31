@@ -8,19 +8,25 @@
  *  passed to all MIDI Class driver functions, so that multiple instances of the same class
  *  within a device can be differentiated from one another.
  */
-USB_ClassInfo_MIDI_Device_t Keyboard_MIDI_Interface = {
-  .Config = {
-    .StreamingInterfaceNumber = 1,
-    
-    .DataINEndpointNumber      = MIDI_STREAM_IN_EPNUM,
-    .DataINEndpointSize        = MIDI_STREAM_EPSIZE,
-    .DataINEndpointDoubleBank  = false,
-
-    .DataOUTEndpointNumber     = MIDI_STREAM_OUT_EPNUM,
-    .DataOUTEndpointSize       = MIDI_STREAM_EPSIZE,
-    .DataOUTEndpointDoubleBank = false,
-  },
-};
+USB_ClassInfo_MIDI_Device_t Keyboard_MIDI_Interface =
+	{
+		.Config =
+			{
+				.StreamingInterfaceNumber = 1,
+				.DataINEndpoint           =
+					{
+						.Address          = MIDI_STREAM_IN_EPADDR,
+						.Size             = MIDI_STREAM_EPSIZE,
+						.Banks            = 1,
+					},
+				.DataOUTEndpoint           =
+					{
+						.Address          = MIDI_STREAM_OUT_EPADDR,
+						.Size             = MIDI_STREAM_EPSIZE,
+						.Banks            = 1,
+					},
+			},
+	};
 
 /* TxLED = PD5 */
 #define LEDTx_ON  { PORTD &= ~0b00100000; }
