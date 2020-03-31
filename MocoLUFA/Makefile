@@ -64,6 +64,9 @@
 MCU = atmega16u2
 #MCU = atmega8u2
 
+# Target architecture (see library "Board Types" documentation).
+ARCH = AVR8
+
 
 # Target board (see library "Board Types" documentation, NONE for projects not requiring
 # LUFA board drivers). If USER is selected, put custom board drivers in a directory called
@@ -96,6 +99,7 @@ F_CPU = 16000000
 #
 #     If no clock division is performed on the input clock inside the AVR (via the
 #     CPU clock adjust registers or the clock division fuses), this will be equal to F_CPU.
+F_USB = $(F_CPU)
 F_CLOCK = $(F_CPU)
 
 
@@ -114,7 +118,7 @@ OBJDIR = .
 
 
 # Path to the LUFA library
-LUFA_PATH = ../thirdparty/LUFA101122
+LUFA_PATH = ../thirdparty/lufa-LUFA-110528
 
 # LUFA library compile-time options and predefined tokens
 LUFA_OPTS  = -D USB_DEVICE_ONLY
@@ -179,8 +183,8 @@ CSTANDARD = -std=c99
 
 # Place -D or -U options here for C sources
 CDEFS  = -DF_CPU=$(F_CPU)UL
-CDEFS += -DF_CLOCK=$(F_CLOCK)UL
-CDEFS += -DBOARD=BOARD_$(BOARD)
+CDEFS += -DF_USB=$(F_USB)UL
+CDEFS += -DBOARD=BOARD_$(BOARD) -DARCH=ARCH_$(ARCH)
 CDEFS += $(LUFA_OPTS)
 
 
@@ -192,7 +196,7 @@ ADEFS += $(LUFA_OPTS)
 
 # Place -D or -U options here for C++ sources
 CPPDEFS  = -DF_CPU=$(F_CPU)UL
-CPPDEFS += -DF_CLOCK=$(F_CLOCK)UL
+CPPDEFS += -DF_USB=$(F_USB)UL
 CPPDEFS += -DBOARD=BOARD_$(BOARD)
 CPPDEFS += $(LUFA_OPTS)
 #CPPDEFS += -D__STDC_LIMIT_MACROS
