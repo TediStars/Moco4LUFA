@@ -118,7 +118,7 @@ OBJDIR = .
 
 
 # Path to the LUFA library
-LUFA_PATH = ../thirdparty/lufa-LUFA-111009
+LUFA_PATH = ../thirdparty/lufa-LUFA-120219
 
 # LUFA library compile-time options and predefined tokens
 LUFA_OPTS  = -D USB_DEVICE_ONLY
