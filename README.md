@@ -42,7 +42,7 @@ cd MocoLUFA
 make
 ```
 
-To build for any older versions please checkout to an available tag
+To build for any older versions please checkout to an available tag.
 Replace XXXXXX with LUFA version number
 
 ```sh
