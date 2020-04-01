@@ -57,11 +57,11 @@ make
 
 ### License
 
-# LUFA
+#### LUFA
 Released under a modified MIT license - see thirdparty/lufa/LUFA/License.txt for license details.
 For Commercial Licensing information, see http://www.lufa-lib.org/license
 
-# MocoLUFA
+#### MocoLUFA
 Lisence information not available
 You can find the original developer below
 http://morecatlab.akiba.coocan.jp/morecat_lab/MocoLUFA.html
