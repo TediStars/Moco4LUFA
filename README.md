@@ -27,7 +27,9 @@ sudo apt-get install git
 
 # How to download from Github
 
-Create a new folder and open a terminal inside it. Then execute the following command
+Create a new folder and open a terminal inside it. Then execute the following commands.
+
+Please mind that we use the recursive flag with git, because we included a submodule for the cutting edge LUFA repository to use with MocoLUFA.
 
 ```sh
 git clone --recursive https://github.com/TediStars/Moco4LUFA.git
@@ -35,21 +37,25 @@ git clone --recursive https://github.com/TediStars/Moco4LUFA.git
 
 # How to build
 
-To build for the latest LUFA version
+To build for the latest LUFA version.
 
 ```sh
-cd MocoLUFA
+cd Moco4LUFA/MocoLUFA
 make
 ```
 
 To build for any older versions please checkout to an available tag.
-Replace XXXXXX with LUFA version number
+Replace XXXXXX with LUFA version number.
 
 ```sh
 git checkout LUFAXXXXXX
-cd MocoLUFA
+cd Moco4LUFA/MocoLUFA
 make
 ```
+
+# Binaries
+
+After building from source you can find the elf/hex/bin files inside the Moco4LUFA/MocoLUFA directory.
 
 # Maintainer
 
